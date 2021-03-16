@@ -9,7 +9,9 @@
 // import 'react/hoc';
 // import 'react/portal';
 
-import './react_router';
+// import './react_router';
+
+import './react_transition_group';
 
 const p1 = { name: 'John', surname: 'Doe', age: 0 };
 
