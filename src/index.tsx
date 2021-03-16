@@ -11,7 +11,9 @@
 
 // import './react_router';
 
-import './react_transition_group';
+// import './react_transition_group';
+
+import './react_redux';
 
 const p1 = { name: 'John', surname: 'Doe', age: 0 };
 

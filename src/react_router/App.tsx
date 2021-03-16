@@ -38,27 +38,13 @@ const App: React.FC = () => {
               </ul>
             </div>
           </Route>
-          <Route path='/nested'>
-            <Nested />
-          </Route>
-          <Route path='/param'>
-            <Param />
-          </Route>
-          <Route path='/query'>
-            <Query />
-          </Route>
-          <Route path='/recursive'>
-            <Recursive />
-          </Route>
-          <Route path='/custom'>
-            <Custom />
-          </Route>
-          <Route path='/prevent'>
-            <Prevent />
-          </Route>
-          <Route path='*'>
-            <Redirect to='/' />
-          </Route>
+          <Route path='/nested' component={Nested} />
+          <Route path='/param' component={Param} />
+          <Route path='/query' component={Query} />
+          <Route path='/recursive' component={Recursive} />
+          <Route path='/custom' component={Custom} />
+          <Route path='/prevent' component={Prevent} />
+          <Redirect to='/' />
         </Switch>
       </section>
     </main>
