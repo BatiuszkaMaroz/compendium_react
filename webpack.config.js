@@ -1,4 +1,5 @@
 /** @type {import('webpack').Configuration} */
+
 const path = require('path');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -43,6 +44,10 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/,

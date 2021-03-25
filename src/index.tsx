@@ -1,37 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+// import 'react_/code_splitting';
+// import 'react_/context_reducer';
+// import 'react_/error_boundary';
+// import 'react_/custom_form_hook';
+// import 'react_/forward_ref';
+// import 'react_/hoc';
+// import 'react_/portal';
 
-// import 'react/code_splitting';
-// import 'react/context_reducer';
-// import 'react/error_boundary';
-// import 'react/custom_form_hook';
-// import 'react/forward_ref';
-// import 'react/hoc';
-// import 'react/portal';
+// import './router';
+// import './transition_group';
 
-// import './react_router';
-
-// import './react_transition_group';
-
-import './react_redux';
-
-const p1 = { name: 'John', surname: 'Doe', age: 0 };
-
-type Person = typeof p1;
-type Keys = keyof Person;
-type KeyedObject = { [K in Keys]: any };
-
-const p2: KeyedObject = {
-  name: 'John',
-  surname: 'Snow',
-  age: 69,
-};
-
-function clone<T>(
-  base: T, //
-  clone: { [K in keyof T]: any },
-): T {
-  return clone;
-}
-
-const c1 = clone(p2, { name: 'John', surname: 'Pattison', age: 100 });
+import './redux_/redux_fundamental';
+import './redux_/redux_toolkit';
