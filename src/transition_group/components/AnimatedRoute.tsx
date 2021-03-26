@@ -12,7 +12,7 @@ const AnimatedRoute: React.FC<RouteProps> = ({ children, ...props }) => {
           timeout={300}
           unmountOnExit
         >
-          <div className='page'>{children}</div>
+          <div className='position-absolute col-6 offset-3'>{children}</div>
         </CSSTransition>
       )}
     </Route>

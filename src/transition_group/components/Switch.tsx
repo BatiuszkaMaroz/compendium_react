@@ -20,17 +20,21 @@ const Switch: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Switch</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-        perferendis voluptatibus illo omnis iure architecto amet, nisi expedita
-        quaerat dignissimos.
+    <>
+      <h1 className='display-1'>Switch</h1>
+      <p className='lead mb-5'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo fugit
+        quasi voluptatem doloremque sint vel culpa repellat, recusandae
+        excepturi aut ipsum corporis itaque laboriosam tempora repudiandae
+        impedit quos amet deserunt.
       </p>
-      <div>
-        <div>
-          <label htmlFor='out-in'>out-in</label>
+      <form className='mb-3'>
+        <div className='form-check form-check-inline me-4'>
+          <label className='form-check-label' htmlFor='out-in'>
+            out-in
+          </label>
           <input
+            className='form-check-input'
             defaultChecked
             id='out-in'
             name='mode'
@@ -38,16 +42,19 @@ const Switch: React.FC = () => {
             type='radio'
           />
         </div>
-        <div>
-          <label htmlFor='in-out'>in-out</label>
+        <div className='form-check form-check-inline'>
+          <label className='form-check-label' htmlFor='in-out'>
+            in-out
+          </label>
           <input
+            className='form-check-input'
             id='in-out'
             name='mode'
             onInput={() => setMode('in-out')}
             type='radio'
           />
         </div>
-      </div>
+      </form>
       <SwitchTransition mode={mode}>
         <CSSTransition
           key={text}
@@ -56,12 +63,15 @@ const Switch: React.FC = () => {
           // onEnter={() => setLock(true)}
           // onExited={() => setLock(false)}
         >
-          <div className='button'>
-            <button onClick={toggleText}>{text}</button>
-          </div>
+          <button
+            className='btn btn-primary btn-lg d-block mb-2'
+            onClick={toggleText}
+          >
+            {text}
+          </button>
         </CSSTransition>
       </SwitchTransition>
-    </div>
+    </>
   );
 };
 

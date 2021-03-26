@@ -1,6 +1,6 @@
 .fade-enter {
   opacity: 0;
-  transform: perspective(1px) scale(1.1);
+  transform: perspective(1px) scale(1.05);
 }
 
 .fade-enter-active {
@@ -16,13 +16,43 @@
 
 .fade-exit-active {
   opacity: 0;
+  transform: perspective(1px) scale(0.95);
+  transition: ease-in-out 300ms;
+}
+
+//? ************************************************************
+
+.modal-fade-enter {
+  position: absolute;
+  opacity: 0;
+  transform: perspective(1px) scale(0.9);
+}
+
+.modal-fade-enter-active {
+  position: absolute;
+  opacity: 1;
+  transform: perspective(1px) scale(1);
+  transition: ease-in-out 300ms;
+}
+
+.modal-fade-exit {
+  position: absolute;
+  opacity: 1;
+  transform: perspective(1px) scale(1);
+}
+
+.modal-fade-exit-active {
+  position: absolute;
+  opacity: 0;
   transform: perspective(1px) scale(0.9);
   transition: ease-in-out 300ms;
 }
 
+//? ************************************************************
+
 .slide-enter {
   opacity: 0;
-  transform: translateX(-20%);
+  transform: translateX(-50%);
 }
 
 .slide-enter-active {
@@ -38,6 +68,34 @@
 
 .slide-exit-active {
   opacity: 0;
-  transform: translateX(20%);
+  transform: translateX(50%);
+  transition: ease-in-out 300ms;
+}
+
+//? ************************************************************
+
+.list-slide-enter {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+}
+
+.list-slide-enter-active {
+  height: 56px;
+  opacity: 1;
+  transition: ease-in-out 300ms;
+}
+
+.list-slide-exit {
+  height: 56px;
+  opacity: 1;
+}
+
+.list-slide-exit-active {
+  height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   transition: ease-in-out 300ms;
 }

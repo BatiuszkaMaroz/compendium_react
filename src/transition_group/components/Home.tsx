@@ -14,32 +14,48 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Home</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-        necessitatibus, quam eaque facere animi dolore libero saepe non corporis
-        aperiam?
+    <>
+      <h1 className='display-1'>Home</h1>
+      <p className='lead mb-5'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut officia
+        quia exercitationem placeat autem ullam officiis ipsum! Corporis ducimus
+        cupiditate ratione! Earum molestiae illo deserunt a ipsa, autem
+        excepturi! Hic autem ipsa doloribus, assumenda eligendi vitae reiciendis
+        beatae odio dolores.
       </p>
       <CSSTransition
-        classNames='fade'
+        classNames='modal-fade'
         in={modal}
         onEnter={() => setButton(false)}
         onExited={() => setButton(true)}
         timeout={300}
         unmountOnExit
       >
-        <div>
-          <h2>The Modal</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum,
-            incidunt.
-          </p>
-          <button onClick={closeModal}>Close Modal</button>
+        <div style={{ width: '600px' }} className='card'>
+          <div className='card-header d-flex justify-content-between align-items-center'>
+            The Modal
+            <button className='btn-close' onClick={closeModal}></button>
+          </div>
+          <div className='card-body'>
+            <h5 className='card-title'>The Modal</h5>
+            <div className='card-text'>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptates iure rerum modi, eos repudiandae facilis delectus amet
+              a velit atque minus exercitationem, veritatis distinctio maiores
+              obcaecati nemo mollitia adipisci doloremque at, explicabo neque.
+              Voluptatibus officia magnam perspiciatis magni doloremque veniam.
+              Autem excepturi earum possimus unde distinctio ex eum totam.
+              Ullam?
+            </div>
+          </div>
         </div>
       </CSSTransition>
-      {button && <button onClick={showModal}>Show Modal</button>}
-    </div>
+      {button && (
+        <button className='btn btn-outline-primary' onClick={showModal}>
+          Show Modal
+        </button>
+      )}
+    </>
   );
 };
 
