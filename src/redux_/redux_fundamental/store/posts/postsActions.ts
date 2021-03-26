@@ -66,6 +66,10 @@ export const editPost = (id: string, updates: PostUpdates) => {
   return <const>{ type: 'posts/edit', payload: { id, updates } };
 };
 
+export const addReaction = (id: string, reaction: string) => {
+  return <const>{ type: 'posts/add_reaction', payload: { id, reaction } };
+};
+
 export type PostsAction = ReturnType<
   | typeof addPost
   | typeof removePost
@@ -73,4 +77,5 @@ export type PostsAction = ReturnType<
   | typeof fetchPostsPending
   | typeof fetchPostsFullfilled
   | typeof fetchPostsRejected
+  | typeof addReaction
 >;

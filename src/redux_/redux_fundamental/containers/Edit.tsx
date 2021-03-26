@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { editPost } from '../store/postsSlice';
+import { editPost } from '../store/posts/postsActions';
 
 import Input from '../components/Input';
 import Textarea from '../components/Textarea';

@@ -1,18 +1,22 @@
-import React, { useReducer } from 'react';
-import { AppContext } from './store/AppContext';
-import { reducer, defaultState } from './store/AppReducer';
+import React from 'react';
+import { TodoContext } from './store/todoContext';
+import { useTodoReducer } from './store/todoReducer';
 
 import Input from './components/Input';
 import List from './components/List';
 
 const App: React.FC = () => {
-  const [state, dispatch] = useReducer<typeof reducer>(reducer, defaultState);
+  const [state, dispatch] = useTodoReducer();
 
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
-      <Input />
-      <List />
-    </AppContext.Provider>
+    <TodoContext.Provider value={{ state, dispatch }}>
+      <div className='container'>
+        <div className='my-5'>
+          <Input />
+        </div>
+        <List />
+      </div>
+    </TodoContext.Provider>
   );
 };
 

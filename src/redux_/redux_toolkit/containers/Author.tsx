@@ -8,11 +8,6 @@ const Author: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   const author = useTypedSelector((s) => s.users.list.find((u) => u.id === id));
-
-  // const posts = useTypedSelector((s) =>
-  //   s.posts.list.filter((p) => p.userId === id),
-  // );
-
   const posts = useTypedSelector((s) => selectPostsByUserId(s, id));
 
   if (!author) {

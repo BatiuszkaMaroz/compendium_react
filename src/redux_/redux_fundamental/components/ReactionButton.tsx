@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addReaction } from '../store/postsSlice';
+import { addReaction } from '../store/posts/postsActions';
 import { nanoid } from 'nanoid';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 
@@ -21,7 +21,7 @@ const ReactionButton: React.FC<Props> = ({ id }) => {
   const post = useTypedSelector((s) => s.posts.list.find((p) => p.id === id));
 
   const onClick = (reaction: string) => {
-    dispatch(addReaction({ id, reaction }));
+    dispatch(addReaction(id, reaction));
   };
 
   if (!post) {

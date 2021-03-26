@@ -2,7 +2,7 @@ import React, { useState, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { addPost } from '../store/postsSlice';
+import { addPost } from '../store/posts/postsActions';
 
 import Input from '../components/Input';
 import Select from '../components/Select';

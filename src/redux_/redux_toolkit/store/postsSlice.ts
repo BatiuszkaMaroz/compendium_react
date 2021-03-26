@@ -68,10 +68,10 @@ const slice = createSlice({
         action: PayloadAction<{ id: string; updates: PostUpdates }>,
       ) => {
         const { id, updates } = action.payload;
-        let post = state.list.find((p) => p.id === id);
+        const post = state.list.find((p) => p.id === id);
 
         if (post) {
-          post = { ...post, ...updates };
+          Object.assign(post, updates);
         }
       },
     },

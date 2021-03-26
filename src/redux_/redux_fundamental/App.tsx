@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { fetchPosts } from './store/postsSlice';
-import { fetchUsers } from './store/usersSlice';
+import { fetchPosts } from './store/posts/postsActions';
+import { fetchUsers } from './store/users/usersActions';
 import { useTypedSelector } from './hooks/useTypedSelector';
 
 import Author from './containers/Author';

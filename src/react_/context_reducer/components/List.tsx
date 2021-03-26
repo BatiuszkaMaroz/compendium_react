@@ -1,25 +1,33 @@
 import React, { useContext } from 'react';
 import { nanoid } from 'nanoid';
 
-import { AppContext } from '../store/AppContext';
-import { ActionTypes } from '../store/AppReducer';
+import { TodoContext } from '../store/todoContext';
+import { removeTodo } from '../store/todoActions';
 
 const List: React.FC = () => {
   const {
     dispatch,
-    state: { todos },
-  } = useContext(AppContext);
+    state: { list },
+  } = useContext(TodoContext);
 
-  const removeHandler = (idx: number) => {
-    dispatch({ type: ActionTypes.REMOVE, idx });
+  const removeHandler = (id: string) => {
+    dispatch(removeTodo(id));
   };
 
   return (
-    <ul>
-      {todos.map((todo, idx) => (
-        <li key={nanoid()}>
-          <p>{todo}</p>
-          <button onClick={() => removeHandler(idx)}>X</button>
+    <ul className='list-group list-group-flush col-6 offset-3'>
+      {list.map((todo, idx) => (
+        <li
+          className='list-group-item d-flex justify-content-between align-items-center'
+          key={nanoid()}
+        >
+          <div className='fw-bold'>{todo.value}</div>
+          <button
+            className='btn btn-danger'
+            onClick={() => removeHandler(todo.id)}
+          >
+            Remove
+          </button>
         </li>
       ))}
     </ul>

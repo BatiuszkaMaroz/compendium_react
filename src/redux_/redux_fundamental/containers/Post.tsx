@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, Redirect, useParams } from 'react-router-dom';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { removePost } from '../store/postsSlice';
+import { removePost } from '../store/posts/postsActions';
 
 import ReactionButton from '../components/ReactionButton';
 

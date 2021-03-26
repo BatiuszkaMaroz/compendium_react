@@ -2,18 +2,14 @@ import React from 'react';
 import { useParams, Redirect, Link } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { selectPostsByUserId } from '../store/postsSlice';
 
 const Author: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   const author = useTypedSelector((s) => s.users.list.find((u) => u.id === id));
-
-  // const posts = useTypedSelector((s) =>
-  //   s.posts.list.filter((p) => p.userId === id),
-  // );
-
-  const posts = useTypedSelector((s) => selectPostsByUserId(s, id));
+  const posts = useTypedSelector((s) =>
+    s.posts.list.filter((p) => p.userId === id),
+  );
 
   if (!author) {
     return <Redirect to='/' />;
