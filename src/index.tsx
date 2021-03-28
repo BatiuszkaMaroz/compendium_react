@@ -10,7 +10,9 @@ import './index.scss';
 // import 'react_/portal';
 
 // import './router';
-import './transition_group';
+// import './transition_group';
 
 // import './redux_/redux_fundamental';
 // import './redux_/redux_toolkit';
+// import './redux_/middleware';
+import './redux_/undo_enhancer';

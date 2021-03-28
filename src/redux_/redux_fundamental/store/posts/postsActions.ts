@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 
 import { nanoid } from 'nanoid';
+import { AnyAction } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { sub } from 'date-fns';
 import { FetchedPost, Post, PostUpdates } from './postsReducer';
@@ -20,7 +21,7 @@ export const fetchPosts = (): ThunkAction<
   void,
   RootState,
   unknown,
-  any
+  AnyAction
 > => async (dispatch) => {
   dispatch(fetchPostsPending());
 

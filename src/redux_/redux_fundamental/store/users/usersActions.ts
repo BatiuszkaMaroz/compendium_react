@@ -1,3 +1,4 @@
+import { AnyAction } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import { RootState } from '../store';
 import { FetchedUser, User } from './usersReducer';
@@ -13,7 +14,7 @@ export const fetchUsers = (): ThunkAction<
   void,
   RootState,
   unknown,
-  any
+  AnyAction
 > => async (dispatch) => {
   dispatch(fetchUsersPending());
 
