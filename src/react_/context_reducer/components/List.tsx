@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { nanoid } from 'nanoid';
 
 import { TodoContext } from '../store/todoContext';
 import { removeTodo } from '../store/todoActions';
@@ -16,10 +15,10 @@ const List: React.FC = () => {
 
   return (
     <ul className='list-group list-group-flush col-6 offset-3'>
-      {list.map((todo, idx) => (
+      {list.map((todo) => (
         <li
           className='list-group-item d-flex justify-content-between align-items-center'
-          key={nanoid()}
+          key={todo.id}
         >
           <div className='fw-bold'>{todo.value}</div>
           <button

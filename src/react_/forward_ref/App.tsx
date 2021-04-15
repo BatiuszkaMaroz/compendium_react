@@ -17,9 +17,11 @@ const App: React.FC = () => {
   }, [fancyRef, inputRef]);
 
   return (
-    <div>
-      <FancyButton ref={fancyRef}>Fancy</FancyButton>
-      <input ref={(e) => (inputRef = e)} />
+    <div className='container'>
+      <div className='input-group mt-3'>
+        <FancyButton ref={fancyRef}>Fancy Focus</FancyButton>
+        <input className='form-control' ref={(e) => (inputRef = e)} />
+      </div>
     </div>
   );
 };

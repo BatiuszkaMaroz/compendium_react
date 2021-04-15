@@ -10,20 +10,34 @@ import Recursive from './components/Recursive';
 
 const App: React.FC = () => {
   return (
-    <main>
-      <nav>
-        <NavLink to='/' exact>
+    <>
+      <nav className='nav nav-pills mb-3'>
+        <NavLink className='nav-link' to='/' exact>
           Home
         </NavLink>
-        <NavLink to='/nested'>Nested</NavLink>
-        <NavLink to='/param'>Param</NavLink>
-        <NavLink to='/query'>Query</NavLink>
-        <NavLink to='/recursive'>Recursive</NavLink>
-        <NavLink to='/custom'>Custom</NavLink>
-        <NavLink to='/prevent'>Prevent</NavLink>
-        <NavLink to='/redirect'>Redirect</NavLink>
+        <NavLink className='nav-link' to='/nested'>
+          Nested
+        </NavLink>
+        <NavLink className='nav-link' to='/param'>
+          Param
+        </NavLink>
+        <NavLink className='nav-link' to='/query'>
+          Query
+        </NavLink>
+        <NavLink className='nav-link' to='/recursive'>
+          Recursive
+        </NavLink>
+        <NavLink className='nav-link' to='/custom'>
+          Custom
+        </NavLink>
+        <NavLink className='nav-link' to='/prevent'>
+          Prevent
+        </NavLink>
+        <NavLink className='nav-link' to='/any/path/that/does/not/exist'>
+          Redirect
+        </NavLink>
       </nav>
-      <section>
+      <div className='container'>
         <Switch>
           <Route path='/' exact>
             <div>
@@ -46,8 +60,8 @@ const App: React.FC = () => {
           <Route path='/prevent' component={Prevent} />
           <Redirect to='/' />
         </Switch>
-      </section>
-    </main>
+      </div>
+    </>
   );
 };
 

@@ -3,9 +3,9 @@ import Portal from './Portal';
 
 const App: React.FC = () => {
   return (
-    <div>
+    <div className='container text-center'>
       <Portal />
-      <p>App</p>
+      <h3>App</h3>
     </div>
   );
 };

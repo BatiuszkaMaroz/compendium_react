@@ -1,8 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-empty-function */
-/* eslint-disable @typescript-eslint/no-empty-interface */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import React from 'react';
 
@@ -29,9 +26,11 @@ class ErrorBoundary extends React.Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div>
-          <p>An expected error occurred, sorry</p>
-          <button onClick={this.acceptError}>Accept</button>
+        <div className='px-5'>
+          <p className='lead'>An expected error occurred, sorry</p>
+          <button className='btn btn-secondary' onClick={this.acceptError}>
+            Accept
+          </button>
         </div>
       );
     }

@@ -12,21 +12,29 @@ const Query: React.FC = () => {
   }, [search]);
 
   return (
-    <div>
-      <nav>
-        <Link to={`${url}`}>None</Link>
-        <Link to={`${url}?name=adam`}>Name</Link>
-        <Link to={`${url}?age=69`}>Age</Link>
-        <Link to={`${url}?name=adam&age=69`}>Name&Age</Link>
+    <>
+      <nav className='nav'>
+        <Link className='nav-link' to={`${url}`}>
+          None
+        </Link>
+        <Link className='nav-link' to={`${url}?name=adam`}>
+          Name
+        </Link>
+        <Link className='nav-link' to={`${url}?age=69`}>
+          Age
+        </Link>
+        <Link className='nav-link' to={`${url}?name=adam&age=69`}>
+          Name_Age
+        </Link>
       </nav>
-      <section>
+      <div className='text-center'>
         {params.map(([key, value]) => (
           <div key={key}>
             {key}: {value}
           </div>
         ))}
-      </section>
-    </div>
+      </div>
+    </>
   );
 };
 

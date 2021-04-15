@@ -11,7 +11,7 @@ const App: React.FC = () => {
   return (
     <TodoContext.Provider value={{ state, dispatch }}>
       <div className='container'>
-        <div className='my-5'>
+        <div className='my-3'>
           <Input />
         </div>
         <List />

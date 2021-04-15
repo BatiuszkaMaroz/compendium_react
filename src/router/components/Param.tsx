@@ -21,7 +21,7 @@ const ParamChild: React.FC = () => {
   const { title, color } = art.find((e) => e.id === +id)!;
 
   return (
-    <div className='color' style={{ background: color }}>
+    <div className='p-5 col-6 offset-3 rounded' style={{ background: color }}>
       {title}
     </div>
   );
@@ -31,28 +31,41 @@ const Param: React.FC = () => {
   const { url, path } = useRouteMatch();
 
   return (
-    <div>
-      <nav>
-        <Link to={`${url}`}>Home</Link>
-        <Link to={`${url}/about`}>About</Link>
-        <Link to={`${url}/0`}>Color 0</Link>
-        <Link to={`${url}/1`}>Color 1</Link>
-        <Link to={`${url}/2`}>Color 2</Link>
-        <Link to={`${url}/3`}>Color 3</Link>
+    <>
+      <nav className='nav mb-3'>
+        <Link className='nav-link' to={`${url}`}>
+          Home
+        </Link>
+        <Link className='nav-link' to={`${url}/about`}>
+          About
+        </Link>
+        <Link className='nav-link' to={`${url}/0`}>
+          Color 0
+        </Link>
+        <Link className='nav-link' to={`${url}/1`}>
+          Color 1
+        </Link>
+        <Link className='nav-link' to={`${url}/2`}>
+          Color 2
+        </Link>
+        <Link className='nav-link' to={`${url}/3`}>
+          Color 3
+        </Link>
       </nav>
-      <section>
+      <div className='text-center'>
         <Switch>
-          <Route path={`${path}/about`}>
-            <div>About</div>
+          <Route path={`${path}`} exact>
+            Home
           </Route>
+          <Route path={`${path}/about`}>About</Route>
           <Route path={`${path}/:id`}>
             <Boundary errorPath={`${path}`}>
               <ParamChild />
             </Boundary>
           </Route>
         </Switch>
-      </section>
-    </div>
+      </div>
+    </>
   );
 };
 

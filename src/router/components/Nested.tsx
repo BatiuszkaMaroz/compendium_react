@@ -6,17 +6,26 @@ const Nested: React.FC = () => {
 
   return (
     <div>
-      <nav>
-        <Link to={`${url}/`}>Home</Link>
-        <Link to={`${url}/profile`}>Profile</Link>
-        <Link to={`${url}/info`}>Info</Link>
+      <nav className='nav mb-3'>
+        <Link className='nav-link' to={`${url}`}>
+          Home
+        </Link>
+        <Link className='nav-link' to={`${url}/profile`}>
+          Profile
+        </Link>
+        <Link className='nav-link' to={`${url}/info`}>
+          Info
+        </Link>
       </nav>
-      <section>
+      <div className='text-center'>
         <Switch>
+          <Route path={`${path}`} exact>
+            Home
+          </Route>
           <Route path={`${path}/profile`}>Profile</Route>
           <Route path={`${path}/info`}>Info</Route>
         </Switch>
-      </section>
+      </div>
     </div>
   );
 };

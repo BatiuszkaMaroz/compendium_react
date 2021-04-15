@@ -1,33 +1,49 @@
 import React, { useState } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
+import classnames from 'classnames';
 
 import Private from './components/Private';
 import Public from './components/Public';
 
 const App: React.FC = () => {
   const [isAuth, setIsAuth] = useState<boolean>(false);
+  const privClass = classnames('nav-link', { 'text-danger': !isAuth });
+  const btnClass = classnames(
+    'btn',
+    { 'btn-danger': isAuth },
+    { 'btn-primary': !isAuth },
+  );
 
   const authHandler = () => {
     setIsAuth((val) => !val);
   };
 
   return (
-    <div>
-      <nav>
-        <Link to='/'>Home</Link>&nbsp;
-        <Link to='/public'>Public</Link>&nbsp;
-        <Link to='/private'>Private</Link>
+    <>
+      <nav className='nav mb-3'>
+        <Link className='nav-link' to='/'>
+          Public
+        </Link>
+        <Link className={privClass} to='/private'>
+          Private
+        </Link>
+        <li className='nav-item'>
+          <button className={btnClass} onClick={authHandler}>
+            {isAuth ? 'Logout' : 'Login'}
+          </button>
+        </li>
       </nav>
-      <Switch>
-        <Route path='/public'>
-          <Public />
-        </Route>
-        <Route path='/private'>
-          <Private isAuth={isAuth} />
-        </Route>
-      </Switch>
-      <button onClick={authHandler}>{isAuth ? 'Logout' : 'Login'}</button>
-    </div>
+      <div className='container text-center'>
+        <Switch>
+          <Route exact path='/'>
+            <Public />
+          </Route>
+          <Route path='/private'>
+            <Private isAuth={isAuth} />
+          </Route>
+        </Switch>
+      </div>
+    </>
   );
 };
 

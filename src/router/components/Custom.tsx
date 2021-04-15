@@ -10,7 +10,7 @@ const CustomLink: React.FC<Props> = ({ to, exact = false, children }) => {
   const match = useRouteMatch({ path: to, exact });
 
   return (
-    <Link to={to}>
+    <Link className='nav-link' to={to}>
       {match && '>> '}
       {children}
       {match && ' <<'}
@@ -23,11 +23,12 @@ const Custom: React.FC = () => {
 
   return (
     <div>
-      <nav>
+      <nav className='nav'>
         <CustomLink to={`${url}`} exact>
           Home
         </CustomLink>
         <CustomLink to={`${url}/about`}>About</CustomLink>
+        <CustomLink to={`${url}/info`}>Info</CustomLink>
       </nav>
     </div>
   );

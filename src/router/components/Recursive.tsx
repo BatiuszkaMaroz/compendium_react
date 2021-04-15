@@ -28,17 +28,19 @@ const Person: React.FC = () => {
   const { friends, name } = findById(+id)!;
 
   return (
-    <div>
+    <div className='px-3 mt-3'>
       <h3>{name}&apos;s friends</h3>
-      {friends.map((id) => {
-        const f = findById(id)!;
+      <nav className='nav'>
+        {friends.map((id) => {
+          const f = findById(id)!;
 
-        return (
-          <Link key={id} to={`${url}/${f.id}`}>
-            {f.name}
-          </Link>
-        );
-      })}
+          return (
+            <Link className='nav-link' key={id} to={`${url}/${f.id}`}>
+              {f.name}
+            </Link>
+          );
+        })}
+      </nav>
       <Route path={`${path}/:id`}>
         <Person />
       </Route>

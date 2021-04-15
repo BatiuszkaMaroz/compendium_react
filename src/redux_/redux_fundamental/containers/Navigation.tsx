@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   return (
-    <nav className='navbar  navbar-expand-md navbar-dark bg-primary sticky-top shadow-sm'>
+    <nav className='navbar navbar-expand-md navbar-dark bg-primary sticky-top shadow-sm'>
       <div className='container'>
         <Link className='navbar-brand' to='/'>
           Json Poster

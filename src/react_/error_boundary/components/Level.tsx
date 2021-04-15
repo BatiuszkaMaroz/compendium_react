@@ -9,7 +9,7 @@ const Level1: React.FC<{ n: number }> = ({ children, n }) => {
   };
 
   const renderChildren = () => (
-    <div>
+    <div className='mt-3'>
       <ErrorBoundary>{children}</ErrorBoundary>
     </div>
   );
@@ -19,9 +19,11 @@ const Level1: React.FC<{ n: number }> = ({ children, n }) => {
   }
 
   return (
-    <div style={{ marginLeft: `${n * 30}px` }}>
+    <div className='px-5'>
       <h1>Level - {n}</h1>
-      <button onClick={clickHandler}>Don&apos;t click</button>
+      <button className='btn btn-danger' onClick={clickHandler}>
+        Do not click
+      </button>
       {children && renderChildren()}
     </div>
   );

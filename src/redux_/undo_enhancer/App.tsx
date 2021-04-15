@@ -38,7 +38,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className='container my-5'>
+    <div className='container mt-3'>
       <div className='row'>
         <div className='col-6 offset-3'>
           <form className='mb-3' onSubmit={onSubmit}>

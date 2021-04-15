@@ -22,7 +22,7 @@ const useForm = <T extends object>({
       const result = validators[id]?.(value);
 
       if (!result) {
-        setErrors((errors) => ({ ...errors, [id]: 'error' }));
+        setErrors((errors) => ({ ...errors, [id]: 'invalid input' }));
       } else {
         setErrors((errors) => ({ ...errors, [id]: undefined }));
       }

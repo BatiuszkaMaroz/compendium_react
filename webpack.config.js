@@ -5,6 +5,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ForkTsChecker = require('fork-ts-checker-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
@@ -69,6 +70,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv(),
     new HtmlPlugin({
       filename: 'index.html',
       template: './public/index.html',

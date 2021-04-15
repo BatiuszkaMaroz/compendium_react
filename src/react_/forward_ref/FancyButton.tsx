@@ -4,7 +4,11 @@ interface Props extends HTMLProps<HTMLButtonElement> {}
 
 const WrappedComponent = React.forwardRef<HTMLButtonElement, Props>(
   function FancyButton({ children }, ref) {
-    return <button ref={ref}>{children}</button>;
+    return (
+      <button className='btn btn-primary' ref={ref}>
+        {children}
+      </button>
+    );
   },
 );
 

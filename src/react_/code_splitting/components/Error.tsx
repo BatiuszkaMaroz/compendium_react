@@ -10,7 +10,11 @@ const Error: React.FC = () => {
   if (error) {
     throw 'Render error';
   } else {
-    return <button onClick={clickHandler}>Don&apos;t click</button>;
+    return (
+      <button className='btn btn-danger' onClick={clickHandler}>
+        Don&apos;t click
+      </button>
+    );
   }
 };
 
