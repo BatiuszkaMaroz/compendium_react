@@ -1,0 +1,4 @@
+{
+  "moduleDirectories": ["node_modules", "src"],
+  "setupFiles": ["./src/setupTests.ts"]
+}
